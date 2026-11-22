@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Motion UI — copy-paste CSS animations</title>
+    <meta
+      name="description"
+      content="A gallery of lightweight, accessible, pure-CSS animations: loaders, buttons, inputs, feedback, text and cards. Copy the HTML + CSS in one click."
+    />
+    <meta name="theme-color" content="#0c0d12" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236d5dfc'/%3E%3Ccircle cx='11' cy='16' r='4' fill='white'/%3E%3Ccircle cx='21' cy='16' r='4' fill='white' opacity='.5'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script type="module" src="src/app.js"></script>
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">Pure CSS · No JavaScript needed · MIT</p>
+      <h1>Motion <span>UI</span></h1>
+      <p class="lead">
+        Lightweight animations you can paste into any project. Every snippet is self-contained, themeable with one
+        CSS variable, and respects <code>prefers-reduced-motion</code>.
+      </p>
+      <div class="toolbar">
+        <span id="count" class="muted"></span>
+        <label class="accent">
+          Accent
+          <input id="accent" type="color" value="#6d5dfc" aria-label="Accent colour" />
+        </label>
+        <button id="pause" type="button" aria-pressed="false">❚❚ Pause</button>
+        <a class="gh" href="https://github.com/NissemBatMan/motion-ui">GitHub</a>
+      </div>
+      <nav id="filters" aria-label="Categories"></nav>
+    </header>
+
+    <main id="grid" class="grid"></main>
+
+    <footer class="foot muted">
+      Made by <a href="https://github.com/NissemBatMan">Nissem</a> · Change the colour of any snippet with
+      <code>--mu-accent</code>
+    </footer>
+
+    <dialog id="code" aria-labelledby="code-title">
+      <header>
+        <h2 id="code-title"></h2>
+        <button type="button" id="copy-all">Copy HTML + CSS</button>
+        <form method="dialog"><button aria-label="Close">✕</button></form>
+      </header>
+      <section data-lang="html">
+        <div class="label">HTML <button type="button" data-copy="HTML">Copy</button></div>
+        <pre><code></code></pre>
+      </section>
+      <section data-lang="css">
+        <div class="label">CSS <button type="button" data-copy="CSS">Copy</button></div>
+        <pre><code></code></pre>
+      </section>
+    </dialog>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
